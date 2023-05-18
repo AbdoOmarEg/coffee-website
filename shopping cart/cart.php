@@ -196,7 +196,6 @@ if(isset($message)){
 };
 
 ?>
-<?php include 'header.php'; ?>
 
 
 
@@ -216,6 +215,8 @@ if(isset($message)){
 
             <nav class="nav">
                <a href="#home">home</a>
+               <a href="admin.php">add products</a>
+               <a href="products.php">view products</a>
                <!-- <a href="today_matches">today's matches</a> -->
                <!-- <a href="#about">about</a> -->
                <!-- <a href="#menu">menu</a> -->
@@ -224,10 +225,17 @@ if(isset($message)){
                <!-- <a href="#contact">contact</a> -->
                <!-- <a href="#blogs">blogs</a> -->
             </nav>
+      <?php
+      
+      $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
+      $row_count = mysqli_num_rows($select_rows);
+
+      ?>
+
 
             <div class="icons">
                <div id="search-btn" class="fas fa-search"></div>
-               <div id="cart-btn" class="fas fa-shopping-cart"></div>
+               <a href="cart.php"><div id="cart-btn" class="fas fa-shopping-cart"><span><?php echo $row_count; ?></span></div></a>
                <!-- <a href="login_form.php" <div id="login-btn" class="fas fa-user"></div>></a> -->
                <div id="login-btn" class="fas fa-user">
                <div id="menu-btn" class="fas fa-bars"></div>
