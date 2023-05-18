@@ -1128,7 +1128,7 @@ section {
    z-index: 10000;
    border-radius: .5rem;
    background-color: var(--white);
-   padding:1.5rem 2rem;
+   padding:0rem 2rem;
    /* margin:0 auto; */
   margin-top: -68px;
    max-width: 400px;

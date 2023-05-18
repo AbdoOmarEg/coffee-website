@@ -75,13 +75,13 @@ if(isset($_POST['order_btn'])){
 
 
 
+<!-- 398 -->
 <?php
 
 @include 'config.php';
 
 session_start();
 // $error = ""; // Initialize the error message variable
-$incorrectCredentials = false; // Flag for incorrect email or password
 
 if(isset($_POST['submit'])){
 
@@ -112,8 +112,7 @@ if(isset($_POST['submit'])){
       }
      
    }else{
-      $error[] = 'incorrect email or password!';
-      $incorrectCredentials = true;
+      $error[] = 'incorrect credentials';
    //    <scriptt>
    // loginForm.classList.add('active');
    //    </script>
@@ -125,8 +124,6 @@ if(isset($_POST['submit'])){
 <?php
 
 @include 'config.php';
-$incorrectpass = false; // Flag for incorrect email or password
-$incorrectuser = false; // Flag for incorrect email or password
 
 if(isset($_POST['submit'])){
 
@@ -136,20 +133,18 @@ if(isset($_POST['submit'])){
    $cpass = md5($_POST['cpassword']);
    $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   $select = " SELECT * FROM user_form WHERE email = '$email' ";
 
    $result = mysqli_query($conn, $select);
 
    if(mysqli_num_rows($result) > 0){
 
-      $incorrectuser = true; // Flag for incorrect email or password
-      $error[] = 'user already exist!';
+      $error[] = 'incorrect credentials';
 
    }else{
 
       if($pass != $cpass){
-         $error[] = 'password not matched!';
-         $incorrectpass = true; // Flag for incorrect email or password
+         //$error[] = 'password not matched!';
       }else{
          $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
          mysqli_query($conn, $insert);
@@ -164,18 +159,11 @@ if(isset($_POST['submit'])){
 
 <script>
    window.onload = function() {
-      <?php if ($incorrectpass == true || $incorrectuser == true): ?>
-         var signupForm = document.querySelector('.signup-form');
-         signupForm.classList.add('active');
-      <?php endif; ?>
-      <?php if ($incorrectCredentials): ?>
+      <?php if (!empty($error)): ?>
          var loginForm = document.querySelector('.login-form');
          loginForm.classList.add('active');
       <?php endif; ?>
    }
-
-
-
 </script>
 
 
@@ -196,18 +184,14 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="../css/style.css">
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 
-
-
-
-
-
+   <!-- header section starts     -->
 <?php
 
 if(isset($message)){
@@ -217,14 +201,6 @@ if(isset($message)){
 };
 
 ?>
-
-
-
-
-
-
-
-   <!-- header section starts     -->
 
    <header class="header fixed-top">
 
@@ -246,6 +222,7 @@ if(isset($message)){
                <!-- <a href="#contact">contact</a> -->
                <!-- <a href="#blogs">blogs</a> -->
             </nav>
+
       <?php
       
       $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
@@ -319,6 +296,7 @@ if(isset($message)){
       if(isset($error)){
          foreach($error as $error){
             echo '<span class="error-msg">'.$error.'</span>';
+            break;
          };
       };
       ?>
@@ -361,13 +339,6 @@ if(isset($message)){
          <!-- <input type="submit" name="submit" value="login now" class="link-btn"> -->
          <!-- <p class="account">don't have an account? <a href="#">create one!</a></p> -->
       <h3>register now</h3>
-      <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
-         };
-      };
-      ?>
       <input type="text" name="name" required placeholder="enter your name" class="box">
       <input type="email" name="email" required placeholder="enter your email" class="box">
       <input type="password" name="password" required placeholder="enter your password" class="box">
@@ -382,6 +353,7 @@ if(isset($message)){
       </form>
 
    </div>
+
 
    <!-- login form ends -->
 
