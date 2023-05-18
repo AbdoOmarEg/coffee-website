@@ -1,0 +1,633 @@
+/*TODO: take the font from the previous css file of the main page*/
+/* Set some basic styles for the container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: sans-serif;
+  /* margin-top: 120px; */
+  width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none !important;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+  /* --black: #13131a; */
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: crimson;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-transform: translateY(-2rem);
+            transform: translateY(-2rem);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    -webkit-transform: translateY(-2rem);
+            transform: translateY(-2rem);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.link-btn {
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  display: inline-block;
+  border: 0.1rem solid crimson;
+  color: crimson;
+  background: none;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.link-btn:hover {
+  background: crimson;
+  color: #cccccc;
+}
+
+
+.heading {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: #222;
+}
+
+.header .btn {
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  display: inline-block;
+  border: 0.1rem solid crimson;
+  color: crimson;
+  background: none;
+  cursor: pointer;
+  font-size: 1.7rem;
+  width: 100%;
+}
+
+.btn:hover {
+  background: crimson;
+  color: #cccccc;
+  letter-spacing: .1rem;
+  /* text-align: center; */
+  /* mbt3ml4 7aga ele fo2ya de*/
+}
+
+.header .btn {
+  color: #cccccc;
+  border-color: #cccccc;
+}
+
+.header {
+  z-index: 1000;
+  padding: 4rem 0;
+}
+
+.header .search-form  {
+  position: absolute;
+  top: 115%;
+  right: 7%;
+  /* background: #222; */
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.header .search-form.active {
+  transform: scaleY(1);
+}
+
+.header .search-form input  {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: crimson;
+  padding: 1rem;
+  text-transform: none;
+}
+
+.header .search-form label{
+  cursor: pointer;
+  font-size: 2.2rem;
+  margin-right: 1.5rem;
+  color: #222;
+}
+
+.header .search-form label:hover{
+  color: crimson;
+}
+
+.header .cart-items-container {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  /*HACK: 3 above make thing right */
+  height: calc(100vh - 9.5rem);
+  width: 35rem;
+  background: #222;
+  padding: 0 1.5rem;
+}
+
+.header .cart-items-container.active{
+  right: 0;
+}
+
+
+.header .cart-items-container .cart-item{
+  position: relative;
+  margin: 2rem 0;
+  display: flex;
+  /* margin-right: -10rem; */
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header .cart-items-container .cart-item .fa-times{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #cccccc;
+  /*make it rotate*/
+}
+
+.header .cart-items-container .cart-item .fa-times:hover{
+  color: crimson;
+}
+
+.header .cart-items-container .cart-item h3{
+  color: #cccccc;
+  font-size: 2rem;
+  padding-bottom: .5rem;
+}
+
+.header .cart-items-container .cart-item .price{
+  color: crimson;
+  font-size: 1.5rem;
+  /* padding-bottom: .5rem; */
+}
+
+
+.header .cart-items-container .cart-item img{
+  height: 7rem;
+}
+
+.header.active {
+  padding: 2rem 0;
+  background: crimson;
+}
+
+.header .logo {
+  font-size: 2.5rem;
+  color: #cccccc;
+  font-weight: bolder;
+}
+
+.header .nav a {
+  font-size: 2rem;
+  margin-right: 2rem;
+  color: #cccccc;
+}
+
+.header .nav a:hover {
+  text-decoration: underline !important;
+  text-underline-offset: .5rem;
+}
+
+.header .icons div {
+  font-size: 2.5rem;
+  color: #cccccc;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.header #menu-btn {
+  display: none;
+}
+
+.login-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+}
+
+.login-form.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-form form {
+  width: 50rem;
+  padding: 4rem;
+  background: #cccccc;
+  text-align: center;
+  position: relative;
+  -webkit-animation: fadeIn .2s linear;
+          animation: fadeIn .2s linear;
+}
+
+.login-form form #close-login-form {
+  position: absolute;
+  top: -4rem;
+  right: 0;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #cccccc;
+}
+
+.login-form form #close-login-form:hover {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.login-form form .logo {
+  font-size: 2.5rem;
+  color: crimson;
+  font-weight: bolder;
+}
+
+.login-form form h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #222;
+  margin-top: 1rem;
+}
+
+.login-form form .box {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  border: 0.1rem solid crimson;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.login-form form .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+  margin: 1rem 0;
+}
+
+.login-form form .flex label {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #666;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.login-form form .flex a {
+  font-size: 1.5rem;
+  color: crimson;
+  margin-left: auto;
+}
+
+.login-form form .flex a:hover {
+  text-decoration: underline !important;
+}
+
+.login-form form .link-btn {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.login-form form .account {
+  padding: 1.5rem .5rem;
+  background: #eee;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.login-form form .account a {
+  color: crimson;
+}
+
+.login-form form .account a:hover {
+  text-decoration: underline !important;
+}
+
+.home {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../images/home-bg.jpg) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.home span {
+  font-size: 2.5rem;
+  color: #cccccc;
+}
+
+.home h3 {
+  padding: 1rem 0;
+  font-size: 6rem;
+  color: #cccccc;
+  width: 250%;
+}
+
+.home .link-btn {
+  color: #cccccc;
+  border-color: #cccccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style the title of the voting system */
+h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+/* Style the match section */
+.match {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Style the match titles */
+.match h2 {
+  padding-top: 10px;
+  color: #cccccc;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* Style the match times/dates */
+.match p {
+  color: #666;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.match .team img{
+    width: 500px;
+    height: auto;
+  max-height: 280px;
+  max-width: 500px;
+  min-height: 280px;
+  min-width: 500px;
+    object-fit: fill;
+    border: 10px;
+  color: #1D1D1D;
+  border-style: solid;
+}
+
+.match .team{
+    /* width: 45%; */
+  text-align: center;
+}
+
+/* Style the team images */
+.match img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  border: solid;
+}
+
+/* Style the vote section */
+.votez {
+  /* display: flex; */
+  /* flex-direction: column; */
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 510px;
+  /* position: relative; */
+}
+
+/* Style the vote buttons */
+/* .left-btn, */
+/* .right-btn { */
+/*   padding: 10px 20px; */
+/*   border: none; */
+/*   background-color: #fff; */
+/*   font-size: 18px; */
+/*   margin-bottom: 20px; */
+/*   cursor: pointer; */
+/*   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+/*   border-radius: 10px; */
+/* } */
+/**/
+/* .left-btn:hover, */
+/* .right-btn:hover { */
+/*   background-color: #f2f2f2; */
+/* } */
+
+.left-btn,
+.right-btn {
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  display: inline-block;
+  border: 0.1rem solid crimson;
+  color: crimson;
+  background: none;
+  cursor: pointer;
+  font-size: 1.7rem;
+  margin-bottom: 40px;
+}
+
+.left-btn:hover,
+.right-btn:hover {
+  background: crimson;
+  color: #cccccc;
+}
+
+.tgrba {
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style the vote bar */
+.bar {
+  position: relative;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #ddd;
+  overflow: visible; /* Add this line */
+}
+
+.left-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background-color: crimson;
+  transition: width 0.5s;
+  width: 1%;
+}
+
+.right-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  /* background-color: #FF5722; */
+  transition: width 0.5s;
+}
+
+/* Style the vote percentage labels */
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-bottom: 40px;
+  color: #cccccc;
+}
+
+.left-label,
+.right-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.container .vote{
+  margin-top: -40px;
+  margin-bottom: 40px;
+}
+
+.max .left-bar {
+  width: 50%; /* Adjust the width as needed */
+}

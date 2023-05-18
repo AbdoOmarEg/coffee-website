@@ -1,0 +1,15 @@
+added header to today_matches and dark mode, todo: add fonts from the main page and style the last two divs
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   css/style.css
+#	modified:   index.html
+#	modified:   js/script.js
+#	modified:   today_matches/index.html
+#	modified:   today_matches/script.js
+#	modified:   today_matches/style.css
+#
