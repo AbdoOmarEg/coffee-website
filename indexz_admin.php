@@ -37,7 +37,7 @@ if(!isset($_SESSION['admin_name'])){
 
    <header class="header fixed-top">
 
-      <div class="container">
+      <div class="container" >
 
          <div class="row align-items-center">
 
@@ -45,10 +45,6 @@ if(!isset($_SESSION['admin_name'])){
 
             <nav class="nav">
                <a href="#home">home</a>
-               <a href="#about">about</a>
-               <a href="today_matches">today's matches</a>
-               <a href="#gallery">gallery</a>
-               <a href="#reviews">reviews</a>
                <a href="shopping cart/products.php">menu</a>
                <a href="shopping cart/admin.php">Add menu</a>
             </nav>

@@ -3,12 +3,104 @@
 @include 'config.php';
 
 session_start();
+// $error = ""; // Initialize the error message variable
+$incorrectCredentials = false; // Flag for incorrect email or password
 
-if(!isset($_SESSION['user_name'])){
-   header('location:login_form.php');
-}
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pass = md5($_POST['password']);
+   $cpass = md5($_POST['cpassword']);
+   $user_type = $_POST['user_type'];
+
+   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+
+   $result = mysqli_query($conn, $select);
+
+   if(mysqli_num_rows($result) > 0){
+
+      $row = mysqli_fetch_array($result);
+
+      if($row['user_type'] == 'admin'){
+
+         $_SESSION['admin_name'] = $row['name'];
+         header('location:indexz_admin2.php');
+
+      }elseif($row['user_type'] == 'user'){
+
+         $_SESSION['user_name'] = $row['name'];
+         header('location:indexz_user2.php');
+
+      }
+     
+   }else{
+      $error[] = 'incorrect email or password!';
+      $incorrectCredentials = true;
+   //    <scriptt>
+   // loginForm.classList.add('active');
+   //    </script>
+      // $error = 'Incorrect email or password!'; // Set the error message
+   }
+
+};
+?>
+<?php
+
+@include 'config.php';
+$incorrectpass = false; // Flag for incorrect email or password
+$incorrectuser = false; // Flag for incorrect email or password
+
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pass = md5($_POST['password']);
+   $cpass = md5($_POST['cpassword']);
+   $user_type = $_POST['user_type'];
+
+   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+
+   $result = mysqli_query($conn, $select);
+
+   if(mysqli_num_rows($result) > 0){
+
+      $incorrectuser = true; // Flag for incorrect email or password
+      $error[] = 'user already exist!';
+
+   }else{
+
+      if($pass != $cpass){
+         $error[] = 'password not matched!';
+         $incorrectpass = true; // Flag for incorrect email or password
+      }else{
+         $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
+         mysqli_query($conn, $insert);
+         header('location:indexz.php');
+      }
+   }
+
+};
+
 
 ?>
+
+<script>
+   window.onload = function() {
+      <?php if ($incorrectpass == true || $incorrectuser == true): ?>
+         var signupForm = document.querySelector('.signup-form');
+         signupForm.classList.add('active');
+      <?php endif; ?>
+      <?php if ($incorrectCredentials): ?>
+         var loginForm = document.querySelector('.login-form');
+         loginForm.classList.add('active');
+      <?php endif; ?>
+   }
+
+
+
+</script>
+
 
 
 <!DOCTYPE html>
@@ -33,7 +125,6 @@ if(!isset($_SESSION['user_name'])){
 
 <body>
 
-
    <!-- header section starts     -->
 
    <header class="header fixed-top">
@@ -47,11 +138,19 @@ if(!isset($_SESSION['user_name'])){
             <nav class="nav">
                <a href="#home">home</a>
                <a href="shopping cart/products.php">menu</a>
+               <!-- <a href="today_matches">today's matches</a> -->
+               <!-- <a href="#about">about</a> -->
+               <!-- <a href="#menu">menu</a> -->
+               <!-- <a href="#gallery">gallery</a> -->
+               <!-- <a href="#reviews">reviews</a> -->
+               <!-- <a href="#contact">contact</a> -->
+               <!-- <a href="#blogs">blogs</a> -->
             </nav>
 
             <div class="icons">
                <div id="search-btn" class="fas fa-search"></div>
                <div id="cart-btn" class="fas fa-shopping-cart"></div>
+               <!-- <a href="login_form.php" <div id="login-btn" class="fas fa-user"></div>></a> -->
                <div id="login-btn" class="fas fa-user">
                <div id="menu-btn" class="fas fa-bars"></div>
             </div>
@@ -101,29 +200,78 @@ if(!isset($_SESSION['user_name'])){
 
    </header>
 
-<div class="message">
-      <h2>welcome <span><?php echo $_SESSION['user_name'] ?></span></h2>
-   <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i>
-</div>
-
-
    <!-- login form starts -->
 
    <div class="login-form">
 
-      <form action="" method="POST">
+      <form action="" method="post">
          <div id="close-login-form" class="fas fa-times"></div>
          <a href="#" class="logo mr-auto"> <i class="fas fa-mug-hot"></i> coffee </a>
          <h3>let's start a new great day</h3>
-         <input type="email" name="email" placeholder="enter your email" id="" class="box">
-         <input type="password" name="password" placeholder="enter your password" id="" class="box">
+      <?php
+      if(isset($error)){
+         foreach($error as $error){
+            echo '<span class="error-msg">'.$error.'</span>';
+         };
+      };
+      ?>
+         <input type="email" name="email" required placeholder="enter your email" id="" class="box">
+         <input type="password" name="password" required placeholder="enter your password" id="" class="box">
+         <!-- <input type="email" name="email" required placeholder="enter your email"> -->
+         <!-- <input type="password" name="password" required placeholder="enter your password"> -->
+         <!-- <input type="submit" name="submit" value="login now" class="form-btn"> -->
          <!-- <div class="flex"> -->
          <!--    <input type="checkbox" name="" id="remember-me"> -->
          <!--    <label for="remember-me">remember me</label> -->
          <!--    <a href="#">forgot password?</a> -->
          <!-- </div> -->
          <input type="submit" name="submit" value="login now" class="link-btn">
-         <p class="account">don't have an account? <a href="#">create one!</a></p>
+            <div id="signup-btn" class="link-btn"></div>
+               <!-- <div id="login-btn" class="fas fa-user"> -->
+            <!-- see icons -->
+      </form>
+
+   </div>
+
+   <div class="signup-form">
+
+      <form action="" method="post">
+         <div id="close-signup-form" class="fas fa-times"></div>
+         <a href="#" class="logo mr-auto"> <i class="fas fa-mug-hot"></i> coffee </a>
+         <!-- <h3>let's start a new great day</h3> -->
+         <!-- <h3>let's start a new great day</h3> -->
+         <!-- <h3>let's start a new great day</h3> -->
+         <!-- <input type="email" name="email" required placeholder="enter your email" id="" class="box"> -->
+         <!-- <input type="password" name="password" required placeholder="enter your password" id="" class="box"> -->
+         <!-- <!-- <input type="email" name="email" required placeholder="enter your email"> --> -->
+         <!-- <!-- <input type="password" name="password" required placeholder="enter your password"> --> -->
+         <!-- <!-- <input type="submit" name="submit" value="login now" class="form-btn"> --> -->
+         <!-- <!-- <div class="flex"> --> -->
+         <!-- <!--    <input type="checkbox" name="" id="remember-me"> --> -->
+         <!-- <!--    <label for="remember-me">remember me</label> --> -->
+         <!-- <!--    <a href="#">forgot password?</a> --> -->
+         <!-- <!-- </div> --> -->
+         <!-- <input type="submit" name="submit" value="login now" class="link-btn"> -->
+         <!-- <p class="account">don't have an account? <a href="#">create one!</a></p> -->
+      <h3>register now</h3>
+      <?php
+      if(isset($error)){
+         foreach($error as $error){
+            echo '<span class="error-msg">'.$error.'</span>';
+         };
+      };
+      ?>
+      <input type="text" name="name" required placeholder="enter your name" class="box">
+      <input type="email" name="email" required placeholder="enter your email" class="box">
+      <input type="password" name="password" required placeholder="enter your password" class="box">
+      <input type="password" name="cpassword" required placeholder="confirm your password" class="box">
+      <select name="user_type" class="box">
+         <option value="user">user</option>
+         <option value="admin">admin</option>
+      </select>
+      <input type="submit" name="submit" value="register now" class="link-btn">
+         <!-- <input type="submit" name="submit" value="login now" class="link-btn"> -->
+      <p>already have an account? <a href="login_form.php">login now</a></p>
       </form>
 
    </div>

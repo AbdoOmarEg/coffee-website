@@ -25,12 +25,12 @@ if(isset($_POST['submit'])){
       if($row['user_type'] == 'admin'){
 
          $_SESSION['admin_name'] = $row['name'];
-         header('location:indexz_admin.php');
+         header('location:indexz_admin2.php');
 
       }elseif($row['user_type'] == 'user'){
 
          $_SESSION['user_name'] = $row['name'];
-         header('location:indexz_user.php');
+         header('location:indexz_user2.php');
 
       }
      
@@ -137,12 +137,13 @@ if(isset($_POST['submit'])){
 
             <nav class="nav">
                <a href="#home">home</a>
-               <a href="#about">about</a>
-               <a href="#menu">menu</a>
-               <a href="#gallery">gallery</a>
-               <a href="#reviews">reviews</a>
-               <a href="#contact">contact</a>
-               <a href="#blogs">blogs</a>
+               <!-- <a href="today_matches">today's matches</a> -->
+               <!-- <a href="#about">about</a> -->
+               <!-- <a href="#menu">menu</a> -->
+               <!-- <a href="#gallery">gallery</a> -->
+               <!-- <a href="#reviews">reviews</a> -->
+               <!-- <a href="#contact">contact</a> -->
+               <!-- <a href="#blogs">blogs</a> -->
             </nav>
 
             <div class="icons">
