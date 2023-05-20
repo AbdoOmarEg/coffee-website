@@ -125,7 +125,7 @@ if(isset($_POST['submit'])){
 
             <nav class="nav">
                <a href="#home">home</a>
-                  <a href="shopping cart/products.php">menu</a>
+                  <a href="shopping cart/products_user.php">menu</a>
                <!-- <a href="today_matches">today's matches</a> -->
                <!-- <a href="#about">about</a> -->
                <!-- <a href="#menu">menu</a> -->
