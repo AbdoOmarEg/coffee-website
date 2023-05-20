@@ -407,8 +407,8 @@ html::-webkit-scrollbar-thumb {
 }
 
 .home .link-btn {
-  color: yellow;
-  border-color: yellow;
+  color: #cccccc;
+  border-color: #cccccc;
 }
 
 
@@ -631,3 +631,47 @@ h1 {
 .max .left-bar {
   width: 50%; /* Adjust the width as needed */
 }
+
+.footer {
+  text-align: center;
+  background-color: #cccccc;
+  margin: 40px;
+}
+
+.footer .logo {
+  font-size: 3rem;
+  color: crimson;
+  font-weight: bolder;
+}
+
+.footer .credit {
+  margin: 2rem 0;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #222;
+}
+
+.footer .credit span {
+  text-decoration: underline !important;
+}
+
+.footer .share {
+  margin-top: 3rem;
+}
+
+.footer .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  border: 0.1rem solid crimson;
+  color: crimson;
+  margin: 0 .3rem;
+}
+
+.footer .share a:hover {
+  background: crimson;
+  color: #cccccc;
+}
+
+

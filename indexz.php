@@ -176,7 +176,7 @@ if(isset($_POST['submit'])){
                   </div>
                </div>
 
-               <a href="#" class="btn">خلصلي الحساب عشان بقفل</a>
+               <a href="#" class="btn">الشيكاوت</a>
             </div>
 
 
@@ -214,7 +214,7 @@ if(isset($_POST['submit'])){
          <!--    <a href="#">forgot password?</a> -->
          <!-- </div> -->
          <input type="submit" name="submit" value="login now" class="link-btn">
-            <div id="signup-btn" class="link-btn"></div>
+            <div id="signup-btn" class="link-btn">signup</div>
                <!-- <div id="login-btn" class="fas fa-user"> -->
             <!-- see icons -->
       </form>
@@ -231,14 +231,14 @@ if(isset($_POST['submit'])){
          <!-- <h3>let's start a new great day</h3> -->
          <!-- <input type="email" name="email" required placeholder="enter your email" id="" class="box"> -->
          <!-- <input type="password" name="password" required placeholder="enter your password" id="" class="box"> -->
-         <!-- <!-- <input type="email" name="email" required placeholder="enter your email"> --> -->
-         <!-- <!-- <input type="password" name="password" required placeholder="enter your password"> --> -->
-         <!-- <!-- <input type="submit" name="submit" value="login now" class="form-btn"> --> -->
-         <!-- <!-- <div class="flex"> --> -->
-         <!-- <!--    <input type="checkbox" name="" id="remember-me"> --> -->
-         <!-- <!--    <label for="remember-me">remember me</label> --> -->
-         <!-- <!--    <a href="#">forgot password?</a> --> -->
-         <!-- <!-- </div> --> -->
+         <!-- <!-- <input type="email" name="email" required placeholder="enter your email"> --> 
+         <!-- <!-- <input type="password" name="password" required placeholder="enter your password"> --> 
+         <!-- <!-- <input type="submit" name="submit" value="login now" class="form-btn"> --> 
+         <!-- <!-- <div class="flex"> -->
+         <!-- <!--    <input type="checkbox" name="" id="remember-me"> --> 
+         <!-- <!--    <label for="remember-me">remember me</label> -->
+         <!-- <!--    <a href="#">forgot password?</a> --> 
+         <!-- <!-- </div> -->
          <!-- <input type="submit" name="submit" value="login now" class="link-btn"> -->
          <!-- <p class="account">don't have an account? <a href="#">create one!</a></p> -->
       <h3>register now</h3>
@@ -252,7 +252,6 @@ if(isset($_POST['submit'])){
       </select>
       <input type="submit" name="submit" value="register now" class="link-btn">
          <!-- <input type="submit" name="submit" value="login now" class="link-btn"> -->
-      <p>already have an account? <a href="login_form.php">login now</a></p>
       </form>
 
    </div>
@@ -325,7 +324,7 @@ if(isset($_POST['submit'])){
 
    <section class="menu" id="menu">
 
-      <h1 class="heading"> our menu </h1>
+      <h1 class="heading"> our coffee BEANS </h1>
 
       <div class="container box-container">
 
@@ -381,7 +380,7 @@ if(isset($_POST['submit'])){
 
    <section class="gallery" id="gallery">
 
-      <h1 class="heading"> our gallery </h1>
+      <h1 class="heading"> A glimpse of our menu </h1>
 
       <div class="box-container container">
 
@@ -443,7 +442,7 @@ if(isset($_POST['submit'])){
 
       <a href="#" class="logo"> <i class="fas fa-mug-hot"></i> coffee </a>
 
-      <p class="credit"> created by <span>mr. web designer</span> | all rights reserved! </p>
+      <p class="credit">  all rights reserved! </p>
 
       <div class="share">
          <a href="#" class="fab fa-facebook-f"></a>

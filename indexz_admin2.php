@@ -139,6 +139,7 @@ if(isset($_POST['submit'])){
             <div class="icons">
                <div id="search-btn" class="fas fa-search"></div>
                <div id="cart-btn" class="fas fa-shopping-cart"></div>
+               <a href="cart_user.php"><div id="cart-btn" class="fas fa-shopping-cart"><span><?php echo $row_count; ?></span></div></a>
                <!-- <a href="login_form.php" <div id="login-btn" class="fas fa-user"></div>></a> -->
                <div id="login-btn" class="fas fa-user">
                <div id="menu-btn" class="fas fa-bars"></div>
@@ -178,7 +179,7 @@ if(isset($_POST['submit'])){
                   </div>
                </div>
 
-               <a href="#" class="btn">خلصلي الحساب عشان بقفل</a>
+               <a href="#" class="btn">الشيكاوت</a>
             </div>
 
 
@@ -327,7 +328,7 @@ if(isset($_POST['submit'])){
 
    <section class="menu" id="menu">
 
-      <h1 class="heading"> our menu </h1>
+      <h1 class="heading"> our coffee BEANS </h1>
 
       <div class="container box-container">
 
@@ -383,7 +384,7 @@ if(isset($_POST['submit'])){
 
    <section class="gallery" id="gallery">
 
-      <h1 class="heading"> our gallery </h1>
+      <h1 class="heading"> A glimpse of our menu </h1>
 
       <div class="box-container container">
 
