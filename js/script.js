@@ -31,6 +31,8 @@ menu.onclick = () => {
    menu.classList.toggle('fa-times');
    navbar.classList.toggle('active');
    searchForm.classList.remove('active');
+   loginForm.classList.remove('active');
+   signupForm.classList.remove('active');
    cartItem.classList.remove('active');
 }
 

@@ -142,7 +142,7 @@ if(isset($message)){
             <a href="#" class="logo mr-auto"> <i class="fas fa-mug-hot"></i> coffee </a>
 
             <nav class="nav">
-               <a href="#home">home</a>
+               <a href="../indexz_admin2.php">home</a>
                <a href="admin.php">add products</a>
                <a href="products.php">view products</a>
                <!-- <a href="today_matches">today's matches</a> -->
@@ -217,6 +217,8 @@ if(isset($message)){
 
    <!-- login form starts -->
 
+   <!-- login form starts -->
+
    <div class="login-form">
 
       <form action="" method="post">
@@ -242,7 +244,7 @@ if(isset($message)){
          <!--    <a href="#">forgot password?</a> -->
          <!-- </div> -->
          <input type="submit" name="submit" value="login now" class="link-btn">
-            <div id="signup-btn" class="link-btn"></div>
+            <div id="signup-btn" class="link-btn">signup</div>
                <!-- <div id="login-btn" class="fas fa-user"> -->
             <!-- see icons -->
       </form>
@@ -259,14 +261,14 @@ if(isset($message)){
          <!-- <h3>let's start a new great day</h3> -->
          <!-- <input type="email" name="email" required placeholder="enter your email" id="" class="box"> -->
          <!-- <input type="password" name="password" required placeholder="enter your password" id="" class="box"> -->
-         <!-- <!-- <input type="email" name="email" required placeholder="enter your email"> --> -->
-         <!-- <!-- <input type="password" name="password" required placeholder="enter your password"> --> -->
-         <!-- <!-- <input type="submit" name="submit" value="login now" class="form-btn"> --> -->
-         <!-- <!-- <div class="flex"> --> -->
-         <!-- <!--    <input type="checkbox" name="" id="remember-me"> --> -->
-         <!-- <!--    <label for="remember-me">remember me</label> --> -->
-         <!-- <!--    <a href="#">forgot password?</a> --> -->
-         <!-- <!-- </div> --> -->
+         <!-- <!-- <input type="email" name="email" required placeholder="enter your email"> --> 
+         <!-- <!-- <input type="password" name="password" required placeholder="enter your password"> --> 
+         <!-- <!-- <input type="submit" name="submit" value="login now" class="form-btn"> --> 
+         <!-- <!-- <div class="flex"> -->
+         <!-- <!--    <input type="checkbox" name="" id="remember-me"> --> 
+         <!-- <!--    <label for="remember-me">remember me</label> -->
+         <!-- <!--    <a href="#">forgot password?</a> --> 
+         <!-- <!-- </div> -->
          <!-- <input type="submit" name="submit" value="login now" class="link-btn"> -->
          <!-- <p class="account">don't have an account? <a href="#">create one!</a></p> -->
       <h3>register now</h3>
@@ -280,7 +282,7 @@ if(isset($message)){
       </select>
       <input type="submit" name="submit" value="register now" class="link-btn">
          <!-- <input type="submit" name="submit" value="login now" class="link-btn"> -->
-      <p>already have an account? <a href="login_form.php">login now</a></p>
+      
       </form>
 
    </div>

@@ -112,7 +112,7 @@ if(isset($_POST['submit'])){
 
 </head>
 
-<body>
+<body style="background: #cccccc">
 
    <!-- header section starts     -->
 
@@ -197,6 +197,10 @@ if(isset($_POST['submit'])){
 
    </header>
 
+<div class="message" style="padding: 17px;">
+      <h2>welcome <span><?php echo $_SESSION['user_name'] ?></span></h2>
+   <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i>
+</div>
    <!-- login form starts -->
 
    <div class="login-form">
@@ -281,7 +285,7 @@ if(isset($_POST['submit'])){
             <div class="col-md-6">
                <span>coffee house</span>
                <h3>start your day with our coffee</h3>
-               <a href="#" class="link-btn">get started</a>
+               <a href="#about" class="link-btn">get started</a>
             </div>
          </div>
 
@@ -446,192 +450,6 @@ if(isset($_POST['submit'])){
 
    <!-- gallery section ends -->
 
-   <!-- reviews section starts  -->
-
-   <section class="reviews" id="reviews">
-
-      <h1 class="heading">customers reviews</h1>
-
-      <div class="box-container container">
-
-         <div class="box">
-            <img src="images/pic-1.png" alt="">
-            <h3>john deo</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ipsum eos? Perspiciatis expedita
-               laudantium blanditiis cupiditate at natus, quam alias?</p>
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star-half-alt"></i>
-            </div>
-         </div>
-
-         <div class="box">
-            <img src="images/pic-2.png" alt="">
-            <h3>john deo</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ipsum eos? Perspiciatis expedita
-               laudantium blanditiis cupiditate at natus, quam alias?</p>
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star-half-alt"></i>
-            </div>
-         </div>
-
-         <div class="box">
-            <img src="images/pic-3.png" alt="">
-            <h3>john deo</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ipsum eos? Perspiciatis expedita
-               laudantium blanditiis cupiditate at natus, quam alias?</p>
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star-half-alt"></i>
-            </div>
-         </div>
-
-      </div>
-
-   </section>
-
-   <!-- reviews section ends -->
-
-   <!-- contact section starts  -->
-
-   <section class="contact" id="contact">
-
-      <h1 class="heading"> contact us </h1>
-
-      <div class="container">
-
-         <div class="contact-info-container">
-
-            <div class="box">
-               <i class="fas fa-phone"></i>
-               <h3>phone</h3>
-               <p>+123-456-7890</p>
-               <p>+111-222-3333</p>
-            </div>
-
-            <div class="box">
-               <i class="fas fa-envelope"></i>
-               <h3>email</h3>
-               <p>shaikhanas@gmail.com</p>
-               <p>anasbhai@gmail.com</p>
-            </div>
-
-            <div class="box">
-               <i class="fas fa-map"></i>
-               <h3>address</h3>
-               <p>mumbai, india - 400104</p>
-            </div>
-
-         </div>
-
-         <div class="row align-items-center">
-
-            <div class="col-md-6 mb-5 mb-md-0 ">
-               <iframe class="map w-100"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.89592087332!2d72.83196972773445!3d19.14167056419224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1640577832473!5m2!1sen!2sin"
-                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
-            <form action="" class="col-md-6">
-               <h3>get in touch</h3>
-               <input type="text" placeholder="your name" class="box">
-               <input type="email" placeholder="email" class="box">
-               <input type="number" placeholder="phone" class="box">
-               <textarea name="" placeholder="message" class="box" id="" cols="30" rows="10"></textarea>
-               <input type="submit" value="send message" class="link-btn">
-            </form>
-
-         </div>
-
-      </div>
-
-   </section>
-
-   <!-- contact section ends -->
-
-   <!-- blogs section starts  -->
-
-   <section class="blogs" id="blogs">
-
-      <h1 class="heading"> our daily posts </h1>
-
-      <div class="box-container container">
-
-         <div class="box">
-            <div class="image">
-               <img src="images/g-img-1.jpg" alt="">
-            </div>
-            <div class="content">
-               <h3>blog title goes here.</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, illum?</p>
-               <a href="#" class="link-btn">read more</a>
-            </div>
-            <div class="icons">
-               <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
-               <span> <i class="fas fa-user"></i> by admin </span>
-            </div>
-         </div>
-
-         <div class="box">
-            <div class="image">
-               <img src="images/g-img-2.jpg" alt="">
-            </div>
-            <div class="content">
-               <h3>blog title goes here.</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, illum?</p>
-               <a href="#" class="link-btn">read more</a>
-            </div>
-            <div class="icons">
-               <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
-               <span> <i class="fas fa-user"></i> by admin </span>
-            </div>
-         </div>
-
-         <div class="box">
-            <div class="image">
-               <img src="images/g-img-3.jpg" alt="">
-            </div>
-            <div class="content">
-               <h3>blog title goes here.</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, illum?</p>
-               <a href="#" class="link-btn">read more</a>
-            </div>
-            <div class="icons">
-               <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
-               <span> <i class="fas fa-user"></i> by admin </span>
-            </div>
-         </div>
-
-      </div>
-
-   </section>
-
-   <!-- blogs section ends -->
-
-   <!-- newsletter section starts  -->
-
-   <section class="newsletter">
-      <div class="container">
-         <h3>newsletter</h3>
-         <p>subscribe for latest upadates</p>
-         <form action="">
-            <input type="email" name="" placeholder="enter your email" id="" class="email">
-            <input type="submit" value="subscribe" class="link-btn">
-         </form>
-      </div>
-   </section>
-
-   <!-- newsletter section ends -->
 
    <!-- footer section starts  -->
 

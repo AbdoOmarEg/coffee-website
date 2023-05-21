@@ -270,7 +270,7 @@ if(isset($_POST['submit'])){
             <div class="col-md-6">
                <span>coffee house</span>
                <h3>start your day with our coffee</h3>
-               <a href="#" class="link-btn">get started</a>
+               <a href="#about" class="link-btn" >get started</a>
             </div>
          </div>
 

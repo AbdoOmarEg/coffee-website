@@ -425,7 +425,7 @@ if(isset($message)){
          <th>image</th>
          <th>name</th>
          <th>price</th>
-         <th>quantity</th>
+         <th>________</th>
          <th>total price</th>
          <th>action</th>
       </thead>
